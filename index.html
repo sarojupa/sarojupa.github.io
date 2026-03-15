@@ -8,6 +8,7 @@
 <body>
   <div class="container">
     <div class="clock">
+      <div class="date-window" id="date-display"></div>
       <div class="hand hour" id="hour-hand"></div>
       <div class="hand minute" id="minute-hand"></div>
       <div class="hand second" id="second-hand"></div>
@@ -74,6 +75,11 @@
       });
     
       timeDisplay.innerText = timeString;
+
+      const dateDisplay = document.getElementById('date-display');
+      const dateOptions = { weekday: 'short', month: 'short', day: 'numeric' };
+      dateString = now.toLocaleDateString('en-US', dateOptions).toUpperCase().replace(',', ''); 
+      dateDisplay.innerText = dateString;
     }
     
     // Run the function every 1000 milliseconds (1 second)
