@@ -73,13 +73,18 @@
           hour12: true,
           timeZoneName: 'short'
       });
-    
-      timeDisplay.innerText = timeString;
 
-      const dateDisplay = document.getElementById('date-display');
-      const dateOptions = { weekday: 'short', month: 'short', day: 'numeric' };
-      dateString = now.toLocaleDateString('en-US', dateOptions).toUpperCase().replace(',', ''); 
-      dateDisplay.innerText = dateString;
+      // Format Date: "Sunday, March 15, 2026"
+      const dateStr = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    
+      // Combine them with a <span> for the second line
+      timeDisplay.innerHTML = `${timeStr}<span class="date-line">${dateStr}</span>`;
+      
     }
     
     // Run the function every 1000 milliseconds (1 second)
