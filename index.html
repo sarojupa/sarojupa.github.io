@@ -52,10 +52,6 @@
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
       minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
       hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
-
-      // Play the sound on every tick
-      // Note: Most browsers require a user interaction (like a click) before audio can play.
-      tickSound.play().catch(e => console.log("Audio requires user interaction to start."));
     }
     
     // Run the function every 1000 milliseconds (1 second)
