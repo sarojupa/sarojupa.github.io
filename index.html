@@ -75,7 +75,7 @@
       });
 
       // Format Date: "Sunday, March 15, 2026"
-      const dateStr = now.toLocaleDateString('en-US', {
+      const dateString = now.toLocaleDateString('en-US', {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
@@ -83,7 +83,7 @@
       });
     
       // Combine them with a <span> for the second line
-      timeDisplay.innerHTML = `${timeStr}<span class="date-line">${dateStr}</span>`;
+      timeDisplay.innerHTML = `${timeString}<span class="date-line">${dateString}</span>`;
       
     }
     
