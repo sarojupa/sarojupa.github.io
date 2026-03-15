@@ -31,21 +31,33 @@
     function updateClock() {
       const now = new Date();
       
+      // Get time units
       const seconds = now.getSeconds();
       const minutes = now.getMinutes();
       const hours = now.getHours();
-
-      // Calculation logic
+    
+      // Calculate degrees for each hand
+      // Each second is 6 degrees (360 / 60)
+      // Each minute is 6 degrees (360 / 60) + adjustment for seconds
+      // Each hour is 30 degrees (360 / 12) + adjustment for minutes
       const secondsDegrees = (seconds * 6);
       const minutesDegrees = (minutes * 6) + (seconds * 0.1);
       const hoursDegrees = (hours * 30) + (minutes * 0.5);
-
-      document.getElementById('second-hand').style.transform = `rotate(${secondsDegrees}deg)`;
-      document.getElementById('minute-hand').style.transform = `rotate(${minutesDegrees}deg)`;
-      document.getElementById('hour-hand').style.transform = `rotate(${hoursDegrees}deg)`;
+    
+      // Apply the rotation to the elements
+      const secondHand = document.querySelector('.second');
+      const minuteHand = document.querySelector('.minute');
+      const hourHand = document.querySelector('.hour');
+    
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+      minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+      hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
     }
-
+    
+    // Run the function every 1000 milliseconds (1 second)
     setInterval(updateClock, 1000);
+    
+    // Run it once immediately so the clock doesn't wait a second to start
     updateClock();
   </script>
 </body>
