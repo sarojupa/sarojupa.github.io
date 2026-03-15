@@ -48,6 +48,14 @@
       const secondHand = document.getElementById('second-hand');
       const minuteHand = document.getElementById('minute-hand');
       const hourHand = document.getElementById('hour-hand');
+
+      // If we are at 0 seconds, disable the transition to jump instantly
+      if (seconds === 0) {
+        secondHand.classList.add('no-transition');
+      } else {
+        secondHand.classList.remove('no-transition');
+      }
+      
     
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
       minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
