@@ -41,19 +41,10 @@ body { display: flex; justify-content: center; align-items: center; height: 100v
   padding-top: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  transform: rotate(var(--rot)); /* Positions the number */
 }
 
-/* Rotate each number by 30 degrees (360/12) */
-.n1 { transform: rotate(30deg); }
-.n2 { transform: rotate(60deg); }
-.n3 { transform: rotate(90deg); }
-.n4 { transform: rotate(120deg); }
-.n5 { transform: rotate(150deg); }
-.n6 { transform: rotate(180deg); }
-.n7 { transform: rotate(210deg); }
-.n8 { transform: rotate(240deg); }
-.n9 { transform: rotate(270deg); }
-.n10 { transform: rotate(300deg); }
-.n11 { transform: rotate(330deg); }
-.n12 { transform: rotate(0deg); }
+.number span {
+  display: inline-block;
+  transform: rotate(calc(-1 * var(--rot))); /* Keeps number upright */
+}
