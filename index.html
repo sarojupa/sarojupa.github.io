@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>My Site</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello!</h1>
-        <p>This is my top-level website hosted on GitHub Pages.</p>
-        <button onclick="alert('It works!')">Click Me</button>
-    </div>
+
+  <div class="clock">
+    <div class="hand hour" id="hour-hand"></div>
+    <div class="hand minute" id="minute-hand"></div>
+    <div class="hand second" id="second-hand"></div>
+    <div class="center-dot"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hours = now.getHours();
+
+      // Calculation logic
+      const secondsDegrees = (seconds * 6);
+      const minutesDegrees = (minutes * 6) + (seconds * 0.1);
+      const hoursDegrees = (hours * 30) + (minutes * 0.5);
+
+      document.getElementById('second-hand').style.transform = `rotate(${secondsDegrees}deg)`;
+      document.getElementById('minute-hand').style.transform = `rotate(${minutesDegrees}deg)`;
+      document.getElementById('hour-hand').style.transform = `rotate(${hoursDegrees}deg)`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
 </html>
