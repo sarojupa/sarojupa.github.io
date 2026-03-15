@@ -6,26 +6,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="clock">
-    <div class="hand hour" id="hour-hand"></div>
-    <div class="hand minute" id="minute-hand"></div>
-    <div class="hand second" id="second-hand"></div>
-    <div class="center-dot"></div>
-    <div class="number" style="--rot: 30deg"><span>1</span></div>
-    <div class="number" style="--rot: 60deg"><span>2</span></div>
-    <div class="number" style="--rot: 90deg"><span>3</span></div>
-    <div class="number" style="--rot: 120deg"><span>4</span></div>
-    <div class="number" style="--rot: 150deg"><span>5</span></div>
-    <div class="number" style="--rot: 180deg"><span>6</span></div>
-    <div class="number" style="--rot: 210deg"><span>7</span></div>
-    <div class="number" style="--rot: 240deg"><span>8</span></div>
-    <div class="number" style="--rot: 270deg"><span>9</span></div>
-    <div class="number" style="--rot: 300deg"><span>10</span></div>
-    <div class="number" style="--rot: 330deg"><span>11</span></div>
-    <div class="number" style="--rot: 360deg"><span>12</span></div>
-  </div>
-  <div id="time-display"></div>
+  <div class="container">
+    <div class="clock">
+      <div class="hand hour" id="hour-hand"></div>
+      <div class="hand minute" id="minute-hand"></div>
+      <div class="hand second" id="second-hand"></div>
+      <div class="center-dot"></div>
+      <div class="number" style="--rot: 30deg"><span>1</span></div>
+      <div class="number" style="--rot: 60deg"><span>2</span></div>
+      <div class="number" style="--rot: 90deg"><span>3</span></div>
+      <div class="number" style="--rot: 120deg"><span>4</span></div>
+      <div class="number" style="--rot: 150deg"><span>5</span></div>
+      <div class="number" style="--rot: 180deg"><span>6</span></div>
+      <div class="number" style="--rot: 210deg"><span>7</span></div>
+      <div class="number" style="--rot: 240deg"><span>8</span></div>
+      <div class="number" style="--rot: 270deg"><span>9</span></div>
+      <div class="number" style="--rot: 300deg"><span>10</span></div>
+      <div class="number" style="--rot: 330deg"><span>11</span></div>
+      <div class="number" style="--rot: 360deg"><span>12</span></div>
+    </div>
+    <div id="time-display"></div>
+  </div>  
   <script>
     function updateClock() {
       const now = new Date();
