@@ -40,7 +40,7 @@
       // Each second is 6 degrees (360 / 60)
       // Each minute is 6 degrees (360 / 60) + adjustment for seconds
       // Each hour is 30 degrees (360 / 12) + adjustment for minutes
-      const secondsDegrees = (seconds * 6);
+      const secondsDegrees = (seconds * 6) + (milliseconds * 0.006);
       const minutesDegrees = (minutes * 6) + (seconds * 0.1);
       const hoursDegrees = (hours * 30) + (minutes * 0.5);
     
